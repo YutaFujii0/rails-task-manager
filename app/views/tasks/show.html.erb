@@ -1,0 +1,13 @@
+<h1>My Tasks</h1>
+
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+<h3>
+  <% if @task.completed %>
+    [X] - This task is completed.
+  <% else %>
+    [ ] - This task is not completed.
+  <% end %>
+</h3>
+
+<%= link_to "Home", tasks_path %>
