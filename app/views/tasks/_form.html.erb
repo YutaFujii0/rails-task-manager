@@ -1,0 +1,14 @@
+<%= form_for(@task) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_area :details, size: '50x10' %>
+  <% unless @task.new_record? %>
+    <%= f.label :completed %>
+    <%= f.radio_button :completed, true %>
+    <%= f.label :Notcompleted %>
+    <%= f.radio_button :completed, false %>
+  <% end %>
+  <%= f.submit :submit %>
+<% end %>
+

@@ -6,7 +6,10 @@
   <% @tasks.each do |task| %>
     <% mark = task.completed ? "[X]" : "[ ]" %>
     <li>
-      <%= "#{mark} - task.title" %>
+      <%= "#{mark} - "%>
+      <%= link_to "#{task.title}", task_path(task.id)%>
+      <%= link_to "Delete", task_path(task.id), method: :delete,
+      data: { confirm: "Are you sure?" } %>
     </li>
   <% end %>
 </ul>
